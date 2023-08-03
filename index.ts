@@ -124,10 +124,10 @@ function run() {
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-        <pre class="accordion-body log">
-          Values: ${JSON.stringify(values)}
-          Tree: ${JSON.stringify(o, null, '\t')}
-        </pre>
+<pre class="accordion-body log">
+Values: ${JSON.stringify(values)}
+Tree: ${JSON.stringify(o, null, '\t')}
+</pre>
       </div>
     </div>
     </div>
@@ -137,6 +137,7 @@ function run() {
     new D3OrgChart(list);
   };
   test();
+
   document.querySelector('input#depth').addEventListener('change', (e) => {
     depth = +(e.target as HTMLInputElement).value;
     test();
@@ -152,7 +153,7 @@ function run() {
   scrollToBottom.addEventListener('click', function () {
     setTimeout(() => {
       pageBottom.scrollIntoView();
-    }, 3000);
+    }, 300);
   });
 }
 
