@@ -20,14 +20,10 @@ export default class O {
   }
 
   public getCount(): number {
-    return 1 + (this.left ? 1 : 0) + (this.right ? 1 : 0);
-  }
-
-  public getTotal(): number {
     return (
-      this.getCount() +
-      (this.left ? this.left.getTotal() : 0) +
-      (this.right ? this.right.getTotal() : 0)
+      1 +
+      (this.left ? this.left.getCount() : 0) +
+      (this.right ? this.right.getCount() : 0)
     );
   }
 

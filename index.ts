@@ -108,7 +108,8 @@ function run() {
       <li>Left sum: ${o.getLeftValue()}</li>
       <li>right sum: ${o.getRightValue()}</li>
       <li>Larger limb: ${o.getLargerLimb()}</li>
-      <li>total: ${o.getTotal()}</li>
+      <li>Count: ${o.getCount()}</li>
+      <li>Value: ${o.getValue()}</li>
     </div>
     <div id="chart">chart</div>
 
@@ -141,15 +142,17 @@ function getData(depth: number): O {
   o.right = new O(rnd(), ++id, o.id);
   let x = o.left;
   let y = o.right;
-  do {
-    x.left = new O(rnd(), ++id, x.id);
-    x.right = new O(rnd(), ++id, x.id);
-    y.left = new O(rnd(), ++id, y.id);
-    y.right = new O(rnd(), ++id, y.id);
-    x = x.left;
-    y = y.right;
-    c++;
-  } while (c < depth);
+  if (depth > 0) {
+    do {
+      x.left = new O(rnd(), ++id, x.id);
+      x.right = new O(rnd(), ++id, x.id);
+      y.left = new O(rnd(), ++id, y.id);
+      y.right = new O(rnd(), ++id, y.id);
+      x = x.left;
+      y = y.right;
+      c++;
+    } while (c < depth);
+  }
   return o;
 }
 
