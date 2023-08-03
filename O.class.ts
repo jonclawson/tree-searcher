@@ -19,6 +19,18 @@ export default class O {
     return this.right?.getValue() || 0;
   }
 
+  public getCount(): number {
+    return 1 + (this.left ? 1 : 0) + (this.right ? 1 : 0);
+  }
+
+  public getTotal(): number {
+    return (
+      this.getCount() +
+      (this.left ? this.left.getTotal() : 0) +
+      (this.right ? this.right.getTotal() : 0)
+    );
+  }
+
   public getLargerLimb() {
     if (this.getLeftValue() > this.getRightValue()) {
       return 'left';

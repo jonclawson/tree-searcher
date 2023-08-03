@@ -9,8 +9,6 @@ export default class D3OrgChart {
   }
 
   render(data): void {
-    // const test = document.querySelector('#chart').innerHTML;
-    console.log(data);
     if (data) {
       this.chart = new OrgChart()
         .container('#chart')

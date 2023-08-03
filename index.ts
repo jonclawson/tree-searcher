@@ -108,6 +108,7 @@ function run() {
       <li>Left sum: ${o.getLeftValue()}</li>
       <li>right sum: ${o.getRightValue()}</li>
       <li>Larger limb: ${o.getLargerLimb()}</li>
+      <li>total: ${o.getTotal()}</li>
     </div>
     <div id="chart">chart</div>
 
