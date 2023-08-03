@@ -23,6 +23,7 @@ export default class D3OrgChart {
       </div>
       `
         )
+        .initialZoom(.2)
         .render();
       this.chart.expandAll();
     }
