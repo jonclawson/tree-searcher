@@ -101,7 +101,7 @@ function run() {
     </div>
   `;
 
-  const update = () => {
+  const test = () => {
     const o = getData(depth);
 
     const values = getAllValues(o);
@@ -136,14 +136,14 @@ function run() {
     const list = getFlattendList(o);
     new D3OrgChart(list);
   };
-  update();
+  test();
   document.querySelector('input#depth').addEventListener('change', (e) => {
     depth = +(e.target as HTMLInputElement).value;
-    update();
+    test();
   });
   document.querySelector('input#target').addEventListener('change', (e) => {
     target = +(e.target as HTMLInputElement).value;
-    update();
+    test();
   });
 
   let scrollToBottom = document.querySelector('#scroll-to-bottom');
