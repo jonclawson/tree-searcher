@@ -14,7 +14,7 @@ export default class D3OrgChart {
         .container('#chart')
         .svgHeight(250)
         .data(data)
-        .childrenMargin((d) => 0.1)
+        .childrenMargin((d) => 1)
         .nodeContent(
           (d) => `
       <div class="circle">
