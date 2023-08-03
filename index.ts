@@ -107,7 +107,7 @@ function run() {
     const values = getAllValues(o);
     document.querySelector('#output').innerHTML = `
     <div class="alert alert-info">
-    <li>contains ${target}: ${constains(target, o)}</li>
+    <li>Contains ${target}: ${constains(target, o)}</li>
     <li>Left sum: ${o.getLeftValue()}</li>
     <li>right sum: ${o.getRightValue()}</li>
     <li>Larger limb: ${o.getLargerLimb()}</li>
