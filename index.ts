@@ -76,23 +76,25 @@ function run() {
     </div>
   </nav>
     <div class="container">
-
-    <div class="row">
-    
-      <form class="form col"> 
-        <h1 class="display-6">A test to traverse a data tree.</h1
-        <p> Adjust the numbers to run the test</p>
-        <label>Depth</label>
-        <input id="depth" class="form-control" type="number" value="${depth}" />
-        <label>Find Nmber</label>
-        <input id="target" class="form-control" type="number" value="${target}" />
-      </form>
-
+      <div>
+        <form class="row"> 
+          <div class="col-12">
+            <h1 class="display-6">A test to traverse a data tree.</h1>
+            <p> Adjust the numbers to run the test</p>
+          </div>
+          <div class="form-inline col">
+          <label>Depth</label>
+          <input id="depth" class="form-control" type="number" value="${depth}" />
+          </div>
+          <div class="form-inline col">
+          <label>Find Nmber</label>
+          <input id="target" class="form-control" type="number" value="${target}" />
+          </div>
+        </form>
       </div>
 
       <div class="row">
-        <div id="output" class="col">
-
+        <div id="output" class="col mt-3">
         </div>
       </div>
     </div>
@@ -103,15 +105,15 @@ function run() {
 
     const values = getAllValues(o);
     document.querySelector('#output').innerHTML = `
-    <div class="alert alert-success">
-      <li>contains ${target}: ${constains(target, o)}</li>
-      <li>Left sum: ${o.getLeftValue()}</li>
-      <li>right sum: ${o.getRightValue()}</li>
-      <li>Larger limb: ${o.getLargerLimb()}</li>
-      <li>Count: ${o.getCount()}</li>
-      <li>Value: ${o.getValue()}</li>
+    <div class="alert alert-info">
+    <li>contains ${target}: ${constains(target, o)}</li>
+    <li>Left sum: ${o.getLeftValue()}</li>
+    <li>right sum: ${o.getRightValue()}</li>
+    <li>Larger limb: ${o.getLargerLimb()}</li>
+    <li>Count: ${o.getCount()}</li>
+    <li>Value: ${o.getValue()}</li>
+    <div id="chart"></div>
     </div>
-    <div id="chart">chart</div>
 
 <pre class="log pad">
   Values: ${JSON.stringify(values)}

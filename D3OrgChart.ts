@@ -12,6 +12,7 @@ export default class D3OrgChart {
     if (data) {
       this.chart = new OrgChart()
         .container('#chart')
+        .svgHeight(250)
         .data(data)
         .childrenMargin((d) => 0.1)
         .nodeContent(
@@ -21,7 +22,7 @@ export default class D3OrgChart {
       </div>
       `
         )
-        .initialZoom(.2)
+        .initialZoom(0.2)
         .render();
       this.chart.expandAll();
     }
