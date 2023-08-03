@@ -117,7 +117,7 @@ function run() {
     </div>
 
     <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
+    <div id="scroll-to-bottom" class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
           Show Log
@@ -130,8 +130,8 @@ function run() {
         </pre>
       </div>
     </div>
-
-</div>
+    </div>
+    <span id="page-bottom">.</span>
 `;
     const list = getFlattendList(o);
     new D3OrgChart(list);
@@ -144,6 +144,15 @@ function run() {
   document.querySelector('input#target').addEventListener('change', (e) => {
     target = +(e.target as HTMLInputElement).value;
     update();
+  });
+
+  let scrollToBottom = document.querySelector('#scroll-to-bottom');
+  let pageBottom = document.querySelector('#page-bottom');
+
+  scrollToBottom.addEventListener('click', function () {
+    setTimeout(() => {
+      pageBottom.scrollIntoView();
+    }, 3000);
   });
 }
 
