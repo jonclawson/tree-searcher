@@ -1,5 +1,6 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import O from './O.class';
 import D3OrgChart from './D3OrgChart';
 
@@ -115,10 +116,22 @@ function run() {
     <div id="chart"></div>
     </div>
 
-<pre class="log pad">
-  Values: ${JSON.stringify(values)}
-  Tree: ${JSON.stringify(o, null, '\t')}
-</pre>
+    <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Accordion Item #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <pre class="accordion-body log">
+          Values: ${JSON.stringify(values)}
+          Tree: ${JSON.stringify(o, null, '\t')}
+        </pre>
+      </div>
+    </div>
+
+</div>
 `;
     const list = getFlattendList(o);
     new D3OrgChart(list);
